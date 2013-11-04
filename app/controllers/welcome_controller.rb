@@ -4,6 +4,6 @@ class WelcomeController < ApplicationController
   end
 
   def help
-  	@text = "Don't bother!"
+  	@text = "Don't botherś!"
   end
 end

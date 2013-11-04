@@ -4,7 +4,7 @@ source 'https://rubygems.org'
 gem 'rails', '4.0.1'
 
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+# gem 'sqlite3'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
@@ -46,16 +46,30 @@ gem 'debugger', group: [:development, :test]
 
 ruby '2.0.0'
 
-gem 'rails_admin'
-
-gem 'devise'
-
 gem 'bootstrap-sass'
 
 gem 'country_select'
 
-gem 'simple_form'
+gem 'simple_form', github: 'zlx/simple_form_bootstrap3'
 
 gem 'font-awesome-rails'
 
 gem 'font-awesome-sass'
+
+gem "mongoid", git: "git://github.com/mongoid/mongoid.git", branch: "master"
+
+gem 'mongoid-audit'
+
+gem 'rails_admin'
+
+gem "devise", git: "git://github.com/plataformatec/devise.git"
+
+gem 'enumerize'
+
+gem 'pry'
+
+gem "activeresource", "~> 4.0.0"
+
+
+
+gem 'rails_admin_settings'

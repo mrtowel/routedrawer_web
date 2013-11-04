@@ -5,6 +5,7 @@
 	<%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
 	<%= javascript_include_tag "application", "data-turbolinks-track" => true %>
 	<%= csrf_meta_tags %>
+	<link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -13,6 +14,14 @@
 	  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
 	  <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
 	<![endif]-->
+	<style>
+		body {
+			font-family: 'PT Sans', sans-serif;
+		}
+		h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+			font-family: 'PT Sans', sans-serif;
+		}
+	</style>
 </head>
 <body>
 	<div class="navbar navbar-inverse navbar-fixed-top">
@@ -33,13 +42,29 @@
           <ul class="nav navbar-nav navbar-right">
           	<li class="dropdown">
           		<a href="#" id="drop3" role="button" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-cog fa-fw" style="font-size: 1.4em"></i></a>
-          		<ul class="dropdown-menu" role="menu" aria-labelledby="drop3">
+          		<ul class="dropdown-menu" role="menu" aria-labelledby="drop3" style="margin: 2px">
 					<% if user_signed_in? %>
-						<li><%= link_to current_user.first_name.empty? ? "Edit profile" : "Profile (%s)" % current_user.first_name, rails_admin_path, :class => "fa fa-pencil-square-o" %></li>
-						<li><%= link_to "Logout", destroy_user_session_path, :method => "delete" %></li>
+						<li>
+							<%= link_to rails_admin_path do %>
+								<i class="fa fa-pencil-square-o"></i><span style="margin: 4px">Edit profile</span>
+							<% end %>
+						</li>
+						<li>
+							<%= link_to destroy_user_session_path, :method => "delete" do %>
+							<i class="fa fa-sign-out"></i><span style="margin: 4px">Logout</span>
+							<% end %>
+						</li>
 					<% else %>
-						<li><%= link_to "Create account", new_user_registration_path %></li>
-						<li><%= link_to "Sign in", user_session_path %></li>
+						<li>
+							<%= link_to new_user_registration_path do %>
+								<i class="fa fa-user"></i><span style="margin: 4px">Create account</span>
+							<% end %>
+						</li>
+						<li>
+							<%= link_to user_session_path do %>
+								<i class="fa fa-sign-in"></i><span style="margin: 4px">Sign in</span>
+							<% end %>
+						</li>
 					<% end %>
 				</ul>
           	</li>
