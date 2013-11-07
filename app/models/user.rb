@@ -1,6 +1,7 @@
 class User
   include Mongoid::Document
   extend Enumerize
+  store_in collection: "users"
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,

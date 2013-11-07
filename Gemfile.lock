@@ -1,15 +1,4 @@
 GIT
-  remote: git://github.com/mongoid/mongoid.git
-  revision: 7457677fec0443b0d2d237ee62b72a15e904b7f3
-  branch: master
-  specs:
-    mongoid (4.0.0)
-      activemodel (~> 4.0.0)
-      moped (~> 2.0.beta3)
-      origin (~> 1.0)
-      tzinfo (~> 0.3.37)
-
-GIT
   remote: git://github.com/plataformatec/devise.git
   revision: e26ea51fe5ae9643bf7690223e06ee1da54766cd
   specs:
@@ -27,6 +16,16 @@ GIT
     simple_form (3.0.0.rc)
       actionpack (>= 4.0.0, < 4.1)
       activemodel (>= 4.0.0, < 4.1)
+
+GIT
+  remote: https://github.com/mongoid/mongoid.git
+  revision: 7457677fec0443b0d2d237ee62b72a15e904b7f3
+  specs:
+    mongoid (4.0.0)
+      activemodel (~> 4.0.0)
+      moped (~> 2.0.beta3)
+      origin (~> 1.0)
+      tzinfo (~> 0.3.37)
 
 GEM
   remote: https://rubygems.org/

@@ -58,7 +58,7 @@ gem 'font-awesome-rails'
 
 gem 'font-awesome-sass'
 
-gem "mongoid", git: "git://github.com/mongoid/mongoid.git", branch: "master"
+gem 'mongoid', git: 'https://github.com/mongoid/mongoid.git'
 
 gem 'mongoid-audit'
 
