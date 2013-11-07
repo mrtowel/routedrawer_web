@@ -1,8 +1,10 @@
 Managable::Application.routes.draw do
     
   
+  # get "registration/new"
+  # get "registration/create"
   mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
-  devise_for :users
+  
   
   
   get "welcome/index"
@@ -10,7 +12,11 @@ Managable::Application.routes.draw do
 
   root 'welcome#index'
 
-  
+  if Rails.env == 'production'
+    devise_for :users, :controllers => { :registrations => "registration" }
+  else
+    devise_for :users
+  end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
