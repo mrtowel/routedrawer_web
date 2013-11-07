@@ -17,8 +17,9 @@ gem 'coffee-rails', '~> 4.0.0'
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 gem 'therubyracer', platforms: :ruby
-gem "less-rails" 
-gem "twitter-bootstrap-rails"
+
+gem 'bootstrap-sass-rails'
+
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 
@@ -47,7 +48,7 @@ gem 'debugger', group: [:development, :test]
 
 ruby '2.0.0'
 
-gem 'bootstrap-sass'
+# gem 'bootstrap-sass'
 
 gem 'country_select'
 
