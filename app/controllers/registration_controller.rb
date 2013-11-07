@@ -4,12 +4,10 @@ class RegistrationController < ApplicationController
   end
   
   def new
-  	@info
-  	redirect_to root_path
+  	redirect_to root_path, notice: @info
   end
 
   def create
-  	@info
-  	redirect_to root_path
+  	redirect_to root_path, notice: @info
   end
 end

@@ -12,7 +12,7 @@ Managable::Application.routes.draw do
 
   root 'welcome#index'
 
-  if Rails.env == 'production'
+  if Rails.env == 'development'
     devise_for :users, :controllers => { :registrations => "registration" }
   else
     devise_for :users
