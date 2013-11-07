@@ -29,7 +29,7 @@ Managable::Application.configure do
 
   config.assets.enabled = true
 
-  config.action_mailer.default_url_options = { :host => root_path }
+  config.action_mailer.default_url_options = { :host => 'localhost:3000' }
 
   config.assets.precompile += ['rails_admin/rails_admin.css', 'rails_admin/rails_admin.js']
 
