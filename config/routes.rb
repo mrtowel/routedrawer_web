@@ -1,7 +1,13 @@
 Managable::Application.routes.draw do
+    
+  if Rails.env == 'production'
+    devise_for :users, :controllers => { :registrations => "registration" }
+  else
+    devise_for :users
+  end
 
-  devise_for :users, ActiveAdmin::Devise.config
-  ActiveAdmin.routes(self)
+  mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
+  
   get "welcome/index"
   get "help" => "welcome#help"
 
