@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.0.1'
+gem 'rails', '~> 4.0.0'
 
 # Use sqlite3 as the database for Active Record
 # gem 'sqlite3'
@@ -49,17 +49,9 @@ ruby '2.0.0'
 
 gem 'country_select'
 
-gem 'simple_form', github: 'zlx/simple_form_bootstrap3'
-
 gem 'font-awesome-rails'
 
 gem 'font-awesome-sass'
-
-gem 'mongoid', git: 'https://github.com/mongoid/mongoid.git'
-
-gem 'mongoid-audit'
-
-gem 'rails_admin'
 
 gem "devise", git: "git://github.com/plataformatec/devise.git"
 
@@ -71,7 +63,10 @@ gem "activeresource", "~> 4.0.0"
 
 gem 'rails_12factor', group: :production
 
+gem 'activeadmin',         '~> 0.6.1'
 
+gem 'activeadmin-mongoid', github: 'elia/activeadmin-mongoid', branch: 'rails4'
 
-# gem 'rails_admin_settings'
-# gem 'unicorn'
+gem 'mongoid',             github: 'mongoid/mongoid'
+
+gem 'mongoid-audit'
