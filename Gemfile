@@ -71,7 +71,9 @@ gem "activeresource", "~> 4.0.0"
 
 gem 'rails_12factor', group: :production
 
+gem 'omniauth'
 
+gem 'cancan'
 
 # gem 'rails_admin_settings'
 # gem 'unicorn'
