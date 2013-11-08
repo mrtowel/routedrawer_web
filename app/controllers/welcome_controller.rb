@@ -1,7 +1,7 @@
 require 'json'
 
 class WelcomeController < ApplicationController
-  respond_to :json, :html
+  respond_to :json, :html, :xml
   
   def index
   	@time = Time.now
@@ -10,7 +10,8 @@ class WelcomeController < ApplicationController
   	
   	respond_to do |format|
 		format.json { render json: @authorizations, except: 'user_id' }
-		format.html {}
+		format.xml { render xml: @authorizations, except: 'user_id' }
+		format.html 
 	end
   end
 
