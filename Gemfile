@@ -74,4 +74,4 @@ gem 'rails_12factor', group: :production
 
 
 # gem 'rails_admin_settings'
-gem 'unicorn'
+# gem 'unicorn'

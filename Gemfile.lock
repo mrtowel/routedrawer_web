@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/plataformatec/devise.git
-  revision: e26ea51fe5ae9643bf7690223e06ee1da54766cd
+  revision: 25726becdddf64f001c37a36d47c0c8595b5733c
   specs:
     devise (3.2.0)
       bcrypt-ruby (~> 3.0)
@@ -109,7 +109,6 @@ GEM
     kaminari (0.14.1)
       actionpack (>= 3.0.0)
       activesupport (>= 3.0.0)
-    kgio (2.8.1)
     libv8 (3.16.14.3)
     mail (2.5.4)
       mime-types (~> 1.16)
@@ -178,7 +177,6 @@ GEM
       activesupport (= 4.0.1)
       rake (>= 0.8.7)
       thor (>= 0.18.1, < 2.0)
-    raindrops (0.12.0)
     rake (10.1.0)
     rdoc (3.12.2)
       json (~> 1.4)
@@ -219,10 +217,6 @@ GEM
     uglifier (2.3.0)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
-    unicorn (4.7.0)
-      kgio (~> 2.6)
-      rack
-      raindrops (~> 0.7)
     warden (1.2.3)
       rack (>= 1.0)
 
@@ -254,4 +248,3 @@ DEPENDENCIES
   therubyracer
   turbolinks
   uglifier (>= 1.3.0)
-  unicorn
