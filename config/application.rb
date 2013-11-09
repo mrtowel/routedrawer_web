@@ -4,7 +4,6 @@ require "action_controller/railtie"
 require "action_mailer/railtie"
 require "rails/test_unit/railtie"
 require "active_resource/railtie"
-require 'cancan'
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.

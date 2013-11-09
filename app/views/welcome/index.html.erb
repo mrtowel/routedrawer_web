@@ -1,4 +1,4 @@
-<h1>Welcome <%= @user %>!</h1>
+<!--<h1>Welcome <%= @user %>!</h1>-->
 <p>Current local time: <%= @time %></p>
 
 <p>
@@ -6,4 +6,11 @@
 	:type => "button", 
 	:class => "btn btn-info" %>
 </p>
+<div>
+	<% @locations.each do |location| %>
+		<pre>
+			<%= JSON.pretty_generate location.as_json(except: :_id) %>
+		</pre>
+	<% end -%>
+</div>
 

@@ -5,14 +5,14 @@ class WelcomeController < ApplicationController
   
   def index
   	@time = Time.now
-  	@user = current_user.nil? ? "Stranger" : current_user.email.split('@')[0]
-  	@authorizations = Authorization.all
+  	#@user = current_user.nil? ? "Stranger" : current_user.email.split('@')[0]
+  	@locations = Location.all
   	
   	respond_to do |format|
-		format.json { render json: @authorizations, except: 'user_id' }
-		format.xml { render xml: @authorizations, except: 'user_id' }
-		format.html 
-	end
+      format.json { render json: @locations, except: 'user_id' }
+      format.xml { render xml: @locations, except: 'user_id' }
+      format.html
+	  end
   end
 
   def help
