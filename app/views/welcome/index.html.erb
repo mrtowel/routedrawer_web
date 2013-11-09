@@ -1,11 +1,11 @@
-<!--<h1>Welcome <%= @user %>!</h1>-->
+<h1>Welcome <%= @user %>!</h1>
 <p>Current local time: <%= @time %></p>
 
 <p>
-	<%= link_to "Update", root_path, 
-	:type => "button", 
-	:class => "btn btn-info" %>
+	<%= link_to "Update", root_path, :type => "button", :class => "btn btn-info" %>
 </p>
+<hr/>
+<h3>Last locations</h3>
 <div>
 	<% @locations.each do |location| %>
 		<pre>

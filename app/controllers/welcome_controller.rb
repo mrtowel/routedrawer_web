@@ -5,7 +5,7 @@ class WelcomeController < ApplicationController
   
   def index
   	@time = Time.now
-  	#@user = current_user.nil? ? "Stranger" : current_user.email.split('@')[0]
+  	@user = current_user.nil? ? "Stranger" : current_user.email.split('@')[0]
   	@locations = Location.all
   	
   	respond_to do |format|
