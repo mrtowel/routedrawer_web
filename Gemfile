@@ -75,5 +75,11 @@ gem 'omniauth'
 
 gem 'cancan'
 
-# gem 'rails_admin_settings'
-# gem 'unicorn'
+gem "rspec-rails", :group => [:test, :development]
+
+group :test do
+  gem "factory_girl_rails"
+  gem "capybara"
+  gem "guard-rspec"
+  gem 'database_cleaner'
+end
