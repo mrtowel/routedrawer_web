@@ -7,7 +7,7 @@ class WelcomeController < ApplicationController
   def create
     user = User.find_for_database_authentication(:api_key => params[:api_key])
     if user.present?
-      @new_location = Location.create(:lat => params[:lat], :lng => params[:lng])
+      @new_location = Location.create(:lat => params[:lat], :lng => params[:lng], :user => user)
 
       respond_to do |format|
         format.json { render json: @new_location }
@@ -36,8 +36,5 @@ class WelcomeController < ApplicationController
 
   def help
   	@text = "Don't bother!"
-    respond_to do |format|
-      format.json { render json: @locations, except: 'user_id' }
-    end
   end
 end

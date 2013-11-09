@@ -9,7 +9,7 @@
 <div>
 	<% @locations.each do |location| %>
 		<pre>
-			<%= JSON.pretty_generate location.as_json(except: :_id) %>
+			<%= JSON.pretty_generate location.as_json(except: [:_id, :user_id]) %>
 		</pre>
 	<% end -%>
 </div>
