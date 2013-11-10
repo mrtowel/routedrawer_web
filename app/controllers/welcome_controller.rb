@@ -7,8 +7,9 @@ class WelcomeController < ApplicationController
   def create
     user = User.find_for_database_authentication(:api_key => params[:api_key])
     if user.present?
-      @new_location = Location.create(params[:welcome], :user => user)
+      params[:welcome][:user] = user
 
+      @new_location = Location.create(location_params.except(:api_key))
       respond_to do |format|
         format.json { render json: @new_location }
       end
@@ -38,5 +39,9 @@ class WelcomeController < ApplicationController
   private
     def display_user(user)
 
+    end
+
+    def location_params
+      params.except(:api_key).require(:welcome).permit!
     end
 end
