@@ -1,16 +1,18 @@
-<h1>Welcome <%= @user %>!</h1>
-<p>Current local time: <%= @time %></p>
+<div class="well">
+    <h1>Welcome <%= @user %>!</h1>
 
-<p>
-	<%= link_to "Update", root_path, :type => "button", :class => "btn btn-info" %>
-</p>
+    <p>Current local time: <%= Time.now %></p>
+
+    <p><%= link_to 'Update', root_path, :type => :button, :class => 'btn btn-info' %></p>
+</div>
 <hr/>
-<h3>Last locations</h3>
-<div>
-	<% @locations.each do |location| %>
+<% unless current_user.nil? %>
+    <h3>Last locations</h3>
+    <div>
+        <% @locations.each do |location| %>
 		<pre>
 			<%= JSON.pretty_generate location.as_json(except: [:_id, :user_id]) %>
 		</pre>
-	<% end -%>
-</div>
-
+        <% end -%>
+    </div>
+<% end %>

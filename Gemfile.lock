@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/plataformatec/devise.git
-  revision: 25726becdddf64f001c37a36d47c0c8595b5733c
+  revision: ed86361b9289d1af86b9917c005786e81cf92429
   specs:
     devise (3.2.0)
       bcrypt-ruby (~> 3.0)
@@ -19,7 +19,7 @@ GIT
 
 GIT
   remote: https://github.com/mongoid/mongoid.git
-  revision: 86b642722dd2b6e17456a3007196addda3799f4d
+  revision: e0d54e8b20ff178c8773cfb8c6b0ee293343dd28
   specs:
     mongoid (4.0.0)
       activemodel (~> 4.0.0)

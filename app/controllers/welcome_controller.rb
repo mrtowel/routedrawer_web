@@ -20,21 +20,23 @@ class WelcomeController < ApplicationController
   end
 
   def index
-  	@time = Time.now
-  	@user = current_user.nil? ? "Stranger" : current_user.email.split('@')[0]
-  	@locations = Location.all
+    @time = Time.now
+    @user = current_user.nil? ? "Stranger" : current_user.email.split('@')[0]
+    @locations = Location.all
 
-
-    unless current_user.nil?
-      respond_to do |format|
-        format.json { render json: @locations, except: 'user_id' }
-        format.xml { render xml: @locations, except: 'user_id' }
-        format.html
-      end
+    respond_to do |format|
+      format.json { render json: @locations, except: 'user_id' }
+      format.xml { render xml: @locations, except: 'user_id' }
+      format.html
     end
   end
 
   def help
-  	@text = "Don't bother!"
+    @text = "Don't bother!"
   end
+
+  private
+    def display_user(user)
+
+    end
 end
