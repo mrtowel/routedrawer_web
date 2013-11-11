@@ -37,11 +37,11 @@ class WelcomeController < ApplicationController
   end
 
   private
-    def display_user(user)
+  def display_user(user)
 
-    end
+  end
 
-    def location_params
-      params.except(:api_key).require(:welcome).permit!
-    end
+  def location_params
+    params.except(:api_key).require(:welcome).permit!
+  end
 end

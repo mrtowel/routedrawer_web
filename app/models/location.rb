@@ -8,7 +8,7 @@ class Location
 
   enumerize :provider, in: [:gps, :network]
 
-  belongs_to :user
+  belongs_to :user, index: true
 
   field :lat, type: String
   field :lng, type: String

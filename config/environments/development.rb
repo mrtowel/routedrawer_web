@@ -33,4 +33,6 @@ Managable::Application.configure do
 
   config.assets.compile = true
 
+  config.mongoid.preload_models = false
+
 end
