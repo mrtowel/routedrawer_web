@@ -26,8 +26,8 @@ class WelcomeController < ApplicationController
     @locations = Location.all
 
     respond_to do |format|
-      format.json { render json: @locations, except: 'user_id' }
-      format.xml { render xml: @locations, except: 'user_id' }
+      format.json { render json: @locations, except: %w(user_id _id) }
+      format.xml { render xml: @locations, except: %w(user_id _id) }
       format.html
     end
   end
@@ -37,9 +37,6 @@ class WelcomeController < ApplicationController
   end
 
   private
-  def display_user(user)
-
-  end
 
   def location_params
     params.except(:api_key).require(:welcome).permit!
