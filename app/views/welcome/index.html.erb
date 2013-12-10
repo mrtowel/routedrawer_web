@@ -7,11 +7,11 @@
 </div>
 <hr/>
 <% unless current_user.nil? %>
-    <h3>Last locations</h3>
+    <h3>Last routes</h3>
     <div>
-        <% @locations.each do |location| %>
+        <% @routes.each do |route| %>
 		<pre>
-			<%= JSON.pretty_generate location.as_json(except: [:_id, :user_id]) %>
+			<%= JSON.pretty_generate route.as_json(except: [:_id, :user_id]) %>
 		</pre>
         <% end -%>
     </div>

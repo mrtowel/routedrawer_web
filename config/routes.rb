@@ -8,11 +8,11 @@ Managable::Application.routes.draw do
 
   mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
   
-  get "welcome/index"
-  get "help" => "welcome#help"
+  get 'welcome/index'
+  get 'help' => 'welcome#help'
 
   root 'welcome#index'
-  match '/location' => 'welcome#create', :via => [:post]
+  match '/route' => 'welcome#create', :via => [:post]
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

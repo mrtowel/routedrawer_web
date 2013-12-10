@@ -9,9 +9,9 @@ class WelcomeController < ApplicationController
     if user.present?
       params[:welcome][:user] = user
 
-      @new_location = Location.create(location_params.except(:api_key))
+      @new_route = Route.create(route_params.except(:api_key))
       respond_to do |format|
-        format.json { render json: @new_location }
+        format.json { render json: @new_route }
       end
     else
       respond_to do |format|
@@ -22,12 +22,12 @@ class WelcomeController < ApplicationController
 
   def index
     @time = Time.now
-    @user = current_user.nil? ? "Stranger" : current_user.email.split('@')[0]
-    @locations = Location.all
+    @user = current_user.nil? ? 'Stranger' : current_user.email.split('@')[0]
+    @routes = Route.all
 
     respond_to do |format|
-      format.json { render json: @locations, except: %w(user_id _id) }
-      format.xml { render xml: @locations, except: %w(user_id _id) }
+      format.json { render json: @routes, except: %w(user_id _id) }
+      format.xml { render xml: @routes, except: %w(user_id _id) }
       format.html
     end
   end
@@ -38,7 +38,7 @@ class WelcomeController < ApplicationController
 
   private
 
-  def location_params
+  def route_params
     params.except(:api_key).require(:welcome).permit!
   end
 end
