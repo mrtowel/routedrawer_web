@@ -33,7 +33,7 @@ RailsAdmin.config do |config|
   # config.included_models = ['HistoryTracker', 'Product', 'RailsAdminSettings::Setting', 'User']
 
   # Label methods for model instances:
-  # onfig.label_methods << :_id # Default is [:name, :title]
+  config.label_methods << :to_s # Default is [:name, :title]
 
 
   ################  Model configuration  ################
@@ -194,33 +194,31 @@ RailsAdmin.config do |config|
 
   ###  User  ###
 
-  # config.model 'User' do
+  #config.model User do
+    #   # You can copy this to a 'rails_admin do ... end' block inside your user.rb model definition
 
-  #   # You can copy this to a 'rails_admin do ... end' block inside your user.rb model definition
-
-  #   # Found associations:
-
+    #   # Found associations:
 
 
-  #   # Found columns:
 
-  #     configure :_id, :bson_object_id 
-  #     configure :sex, :enum 
-  #     configure :email, :text 
-  #     configure :password, :password         # Hidden 
-  #     configure :password_confirmation, :password         # Hidden 
-  #     configure :reset_password_token, :text         # Hidden 
-  #     configure :reset_password_sent_at, :datetime 
-  #     configure :remember_created_at, :datetime 
-  #     configure :sign_in_count, :integer 
-  #     configure :current_sign_in_at, :datetime 
-  #     configure :last_sign_in_at, :datetime 
-  #     configure :current_sign_in_ip, :text 
-  #     configure :last_sign_in_ip, :text 
+    #   # Found columns:
 
-  #   # Cross-section configuration:
+    #     configure :_id, :bson_object_id
+    #     configure :sex, :enum
+    #     configure :email, :text
+    #     configure :password, :password         # Hidden
+    #     configure :password_confirmation, :password         # Hidden
+    #     configure :reset_password_token, :text         # Hidden
+    #     configure :reset_password_sent_at, :datetime
+    #     configure :remember_created_at, :datetime
+    #     configure :sign_in_count, :integer
+    #     configure :current_sign_in_at, :datetime
+    #     configure :last_sign_in_at, :datetime
+    #     configure :current_sign_in_ip, :text
+    #     configure :last_sign_in_ip, :text
 
-  #     # object_label_method :name     # Name of the method called for pretty printing an *instance* of ModelName
+    #   # Cross-section configuration:
+
   #     # label 'My model'              # Name of ModelName (smartly defaults to ActiveRecord's I18n API)
   #     # label_plural 'My models'      # Same, plural
   #     # weight 0                      # Navigation priority. Bigger is higher.
@@ -241,6 +239,6 @@ RailsAdmin.config do |config|
   #     # also see the create, update, modal and nested sections, which override edit in specific cases (resp. when creating, updating, modifying from another model in a popup modal or modifying from another model nested form)
   #     # you can override a cross-section field configuration in any section with the same syntax `configure :field_name do ... end`
   #     # using `field` instead of `configure` will exclude all other fields and force the ordering
-  # end
+  #end
 
 end

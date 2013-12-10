@@ -17,4 +17,8 @@ class Location
 
   validates_presence_of :lat, :lng
 
+
+  def to_s
+    "(#{self.lat}/#{self.lng})"
+  end
 end

@@ -64,10 +64,15 @@ class User
     end
   end
 
-  private
-  def generate_token
-    seed = [('a'..'z'), ('A'..'Z'), (0..9)].map { |i| i.to_a }.flatten
-    (0..31).map { seed[rand(seed.length)] }.join
-
+  def to_s
+    "<#{self.email}>"
   end
+
+  private
+
+    def generate_token
+      seed = [('a'..'z'), ('A'..'Z'), (0..9)].map { |i| i.to_a }.flatten
+      (0..31).map { seed[rand(seed.length)] }.join
+    end
+
 end

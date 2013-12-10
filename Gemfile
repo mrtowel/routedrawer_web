@@ -41,7 +41,7 @@ gem 'bcrypt-ruby', '~> 3.1.2'
 # gem 'capistrano', group: :development
 
 # Use debugger
-gem 'debugger', group: [:development, :test]
+#gem 'debugger', group: [:development, :test]
 
 ruby '2.0.0'
 
@@ -61,13 +61,13 @@ gem 'mongoid-audit'
 
 gem 'rails_admin'
 
-gem "devise", git: "git://github.com/plataformatec/devise.git"
+gem 'devise', git: 'git://github.com/plataformatec/devise.git'
 
 gem 'enumerize'
 
 gem 'pry'
 
-gem "activeresource", "~> 4.0.0"
+gem 'activeresource', '~> 4.0.0'
 
 gem 'rails_12factor', group: :production
 
@@ -75,11 +75,11 @@ gem 'omniauth'
 
 gem 'cancan'
 
-gem "rspec-rails", :group => [:test, :development]
+gem 'rspec-rails', :group => [:test, :development]
 
 group :test do
-  gem "factory_girl_rails"
-  gem "capybara"
-  gem "guard-rspec"
+  gem 'factory_girl_rails'
+  gem 'capybara'
+  gem 'guard-rspec'
   gem 'database_cleaner'
 end

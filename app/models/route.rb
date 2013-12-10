@@ -11,4 +11,7 @@ class Route
   field :distance, type: BigDecimal
   field :total_points, type: Integer
 
+  def to_s
+    '%s km @ %s' % [self.distance, self.created_at]
+  end
 end
