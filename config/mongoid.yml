@@ -7,6 +7,7 @@ development:
        # (required).
        uri: <%= ENV['MONGOHQ_URL'] %>
        options:
+         ssl: true
          # consistency: :strong
          # Change the default write concern. (default = { w: 1 })
          # write:
@@ -77,5 +78,5 @@ production:
     default:
       uri: <%= ENV['MONGOHQ_URL'] %>
       options:
-        safe: true
+        ssl: true
         max_retries_on_connection_failure: 20
