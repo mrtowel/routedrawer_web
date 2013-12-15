@@ -7,7 +7,7 @@
 </div>
 <hr/>
 <% unless current_user.nil? %>
-    <h3>Last routes</h3>
+    <h3>Synchronized routes (<%= @routes.count %>)</h3>
     <div>
         <% @routes.each do |route| %>
 		<pre>
