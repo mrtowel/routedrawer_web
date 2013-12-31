@@ -1,3 +1,5 @@
+require 'bcrypt'
+
 class User
   include Mongoid::Document
   extend Enumerize
@@ -74,5 +76,4 @@ class User
       seed = [('a'..'z'), ('A'..'Z'), (0..9)].map { |i| i.to_a }.flatten
       (0..31).map { seed[rand(seed.length)] }.join
     end
-
 end

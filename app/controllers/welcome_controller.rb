@@ -1,4 +1,5 @@
 require 'json'
+require 'bcrypt'
 
 class WelcomeController < ApplicationController
   respond_to :json, :html, :xml
@@ -27,7 +28,15 @@ class WelcomeController < ApplicationController
       return
     end
 
-    user = User.find_for_database_authentication(api_key: header_api_key, email: header_email)
+    if valid_hashed_token?(header_api_key)
+      user = User.find_for_database_authentication(email: header_email)
+      unless !user.nil? && unhash_token(header_api_key) == user.api_key
+        return
+      end
+    else
+      return
+    end
+
     params[:welcome][:user] = user
 
     new_route = Route.create(route_params)
@@ -45,5 +54,17 @@ class WelcomeController < ApplicationController
   private
     def route_params
       params.except(:api_key).require(:welcome).permit!
+    end
+
+    def hash_token(token)
+      BCrypt::Password.create(token)
+    end
+
+    def unhash_token(hashed_token)
+      BCrypt::Password.new(hashed_token)
+    end
+
+    def valid_hashed_token?(token)
+      BCrypt::Engine.valid_salt?(token) && BCrypt::Engine.valid_secret?(token)
     end
 end

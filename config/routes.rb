@@ -1,7 +1,10 @@
 Managable::Application.routes.draw do
     
+  get 'forecast/location'
+  get 'forecast/weather'
+
   if Rails.env == 'production'
-    devise_for :users, :controllers => { :registrations => "registration" }
+    devise_for :users, :controllers => { :registrations => 'registration'}
   else
     devise_for :users
   end
