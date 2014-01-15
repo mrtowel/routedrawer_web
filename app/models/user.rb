@@ -61,7 +61,7 @@ class User
   end
 
   before_validation do
-    if self.api_key.length != 32 or self.api_key.nil?
+    if self.api_key.length != 64 or self.api_key.nil?
       self.api_key = generate_token
     end
   end
@@ -74,6 +74,6 @@ class User
 
     def generate_token
       seed = [('a'..'z'), ('A'..'Z'), (0..9)].map { |i| i.to_a }.flatten
-      (0..31).map { seed[rand(seed.length)] }.join
+      (0..63).map { seed[rand(seed.length)] }.join
     end
 end
