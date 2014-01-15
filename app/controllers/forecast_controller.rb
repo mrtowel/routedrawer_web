@@ -5,6 +5,10 @@ class ForecastController < ApplicationController
 
   def location
     @locations = JSON.parse geocode_name('lotnisko')
+    respond_to do |format|
+      format.json { render json: @locations }
+      format.html { @locations }
+    end
   end
 
   def weather
@@ -20,7 +24,10 @@ class ForecastController < ApplicationController
         @weather = JSON.parse forecast_weather(lat,lng)
       end
     end
-
+    respond_to do |format|
+      format.json { render json: @weather }
+      format.html { @weather }
+    end
   end
 
   private
