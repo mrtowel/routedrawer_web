@@ -85,3 +85,5 @@ group :test do
 end
 
 gem 'unicorn', group: :production
+
+gem 'sidekiq'
