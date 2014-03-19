@@ -15,8 +15,14 @@
 /log/*.log
 /tmp
 
+# Intellij project files
 .idea
+*.iml
 
+# Local variables
+.env
+
+# The rest
 *.rbc
 *.sassc
 .sass-cache
@@ -32,3 +38,4 @@ rerun.txt
 pickle-email-*.html
 config/initializers/secret_token.rb
 .rvmrc
+
